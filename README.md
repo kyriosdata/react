@@ -1,3 +1,3 @@
 # Aprendendo React Native em pequenos passos
 
-- [basico](basico) primeira aplicação `expo init basico`
+- [elementar](elementar) primeira aplicação `expo init elementar` seguido de `expo start` coloca a aplicação disponível.
