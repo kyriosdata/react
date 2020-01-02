@@ -4,4 +4,5 @@
 - [segundo](segundo) alterando o estilo de texto.
 - [terceiro](terceiro) um componente embutido em uma função
 - [componentes](componentes) trabalhando com componentes básicos 
+- [flexbox](flexbox) posicionando componentes
 
