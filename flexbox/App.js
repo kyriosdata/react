@@ -2,14 +2,26 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 function vermelha() {
-  return <View style={styles.red}></View>;
+  return (
+    <View style={styles.red}>
+      <Text style={styles.numero}>1</Text>
+    </View>
+  );
 }
 
 function verde() {
-  return <View style={styles.green}></View>;
+  return (
+    <View style={styles.green}>
+      <Text style={styles.numero}>2</Text>
+    </View>
+  );
 }
 
-const azul = () => <View style={styles.blue}></View>;
+const azul = () => (
+  <View style={styles.blue}>
+    <Text style={styles.numero}>3</Text>
+  </View>
+);
 
 export default function App() {
   return (
@@ -25,23 +37,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "space-around"
   },
 
   red: {
     backgroundColor: "red",
-    width: 100,
-    height: 100
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center"
   },
   green: {
     backgroundColor: "green",
-    width: 100,
-    height: 100
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center"
   },
   blue: {
     backgroundColor: "blue",
-    width: 100,
-    height: 100
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  numero: {
+    fontSize: 23,
+    fontWeight: "bold",
+    color: "white"
   }
 });
