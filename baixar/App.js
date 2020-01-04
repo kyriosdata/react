@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, FlatList, Text, View, Button } from "react-native";
+import {
+  StyleSheet,
+  FlatList,
+  Text,
+  View,
+  Button,
+  ActivityIndicator
+} from "react-native";
 
-async function download(url, callback) {
+function download(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.responseType = "text";
@@ -14,9 +21,8 @@ async function download(url, callback) {
 }
 
 export default function App() {
-  const [conteudo, setConteudo] = useState([
-    { codigo: 9999999999, municipio: "Clique para obter" }
-  ]);
+  const [atividade, setAtividade] = useState(false);
+  const [conteudo, setConteudo] = useState([]);
   const [refresh, setRefresh] = useState(false);
 
   function limpaLista() {
@@ -29,13 +35,37 @@ export default function App() {
     console.log(medicamentos.length);
     console.log(medicamentos[0]);
     setConteudo(medicamentos);
+    setAtividade(false);
   }
 
   function baixeArquivo() {
+    setAtividade(true);
     console.log("baixando...");
     download(
       "https://kyriosdata.github.io/react-native/municipios.json",
       feedback
+    );
+  }
+
+  function exibeCondicionalmente() {
+    if (atividade) {
+      return (
+        <ActivityIndicator
+          style={styles.indicador}
+          size="large"
+          color="steelblue"
+          animating={atividade}
+        />
+      );
+    }
+
+    return (
+      <FlatList
+        extraData={refresh}
+        data={conteudo}
+        renderItem={itemData => <Text>{itemData.item.municipio}</Text>}
+        keyExtractor={(item, index) => item.codigo.toString()}
+      />
     );
   }
 
@@ -45,14 +75,7 @@ export default function App() {
         <Button title="Limpa lista" onPress={limpaLista} />
         <Button title="download cidades..." onPress={baixeArquivo} />
       </View>
-      <View style={styles.saida}>
-        <FlatList
-          extraData={refresh}
-          data={conteudo}
-          renderItem={itemData => <Text>{itemData.item.municipio}</Text>}
-          keyExtractor={(item, index) => item.codigo.toString()}
-        />
-      </View>
+      <View style={styles.saida}>{exibeCondicionalmente()}</View>
     </View>
   );
 }
@@ -78,5 +101,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "red",
     padding: 8
+  },
+
+  indicador: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1
   }
 });
