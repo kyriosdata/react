@@ -10,7 +10,7 @@ export default function App() {
       <View style={styles.caixa}>
         <Text>Pressione um dos botões</Text>
         <TextInput style={styles.entrada} placeholder="forneça um texto" />
-        <View style={styles.botaoContainer}>
+        <View style={styles.botoesConteinerexpo }>
           <View style={styles.botao}>
             <Button title="esquerda" />
           </View>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
 
-  botaoContainer: {
+  botoesConteiner: {
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-evenly"

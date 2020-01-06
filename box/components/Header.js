@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 19,
+    fontSize: 21,
     color: "yellow"
   }
 });
