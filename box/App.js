@@ -6,11 +6,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header title="Uma caixa" />
-      <Text>Você pode escolher</Text>
+      <Text style={styles.destaque}>Exemplo de caixa (box)</Text>
       <View style={styles.caixa}>
-        <Text>Pressione um dos botões</Text>
+        <Text style={styles.titulo}>Título da caixa</Text>
         <TextInput style={styles.entrada} placeholder="forneça um texto" />
-        <View style={styles.botoesConteinerexpo }>
+        <View style={styles.botoesConteiner}>
           <View style={styles.botao}>
             <Button title="esquerda" />
           </View>
@@ -24,13 +24,16 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  destaque: {
+    fontSize: 18
+  },
   caixa: {
     width: "90%",
-    height: 140,
     alignItems: "center",
     justifyContent: "center",
     margin: 15,
-    borderWidth: 1
+    borderRadius: 6,
+    elevation: 2
   },
 
   entrada: {
@@ -38,14 +41,14 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: "white",
     borderBottomColor: "black",
-    borderBottomWidth: 1,
-    marginVertical: 10
+    borderBottomWidth: 1
   },
 
   botoesConteiner: {
     flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-evenly"
+    width: "90%",
+    justifyContent: "space-around",
+    marginVertical: 25
   },
 
   container: {
@@ -54,7 +57,12 @@ const styles = StyleSheet.create({
   },
 
   botao: {
-    width: "30%",
-    elevation: 7
+    width: 90
+  },
+
+  titulo: {
+    fontSize: 17,
+    fontWeight: "bold",
+    marginVertical: 10
   }
 });
