@@ -8,14 +8,14 @@ export default function App() {
     <View style={styles.container}>
       <Header title="Uma caixa" />
       <Text style={styles.destaque}>Exemplo de caixa (box)</Text>
-      <Caixa title="Título da caixa">
+      <Caixa title="Título da caixa" style={styles.caixa}>
         <TextInput style={styles.entrada} placeholder="forneça um texto" />
         <View style={styles.botoesConteiner}>
           <View style={styles.botao}>
-            <Button title="esquerda" />
+            <Button title="esquerda" onPress={() => {}} />
           </View>
           <View style={styles.botao}>
-            <Button title="direita" />
+            <Button title="direita" onPress={() => {}} />
           </View>
         </View>
       </Caixa>
@@ -30,10 +30,7 @@ const styles = StyleSheet.create({
   caixa: {
     width: "90%",
     alignItems: "center",
-    justifyContent: "center",
-    margin: 15,
-    borderRadius: 6,
-    elevation: 2
+    justifyContent: "center"
   },
 
   entrada: {
