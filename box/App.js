@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import Header from "./components/Header";
+import Caixa from "./components/Caixa";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header title="Uma caixa" />
       <Text style={styles.destaque}>Exemplo de caixa (box)</Text>
-      <View style={styles.caixa}>
-        <Text style={styles.titulo}>Título da caixa</Text>
+      <Caixa title="Título da caixa">
         <TextInput style={styles.entrada} placeholder="forneça um texto" />
         <View style={styles.botoesConteiner}>
           <View style={styles.botao}>
@@ -18,7 +18,7 @@ export default function App() {
             <Button title="direita" />
           </View>
         </View>
-      </View>
+      </Caixa>
     </View>
   );
 }
@@ -58,11 +58,5 @@ const styles = StyleSheet.create({
 
   botao: {
     width: 90
-  },
-
-  titulo: {
-    fontSize: 17,
-    fontWeight: "bold",
-    marginVertical: 10
   }
 });
