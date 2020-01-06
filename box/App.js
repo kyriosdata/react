@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     width: "70%",
     height: 40,
     backgroundColor: "white",
-    borderBottomColor: "black",
+    borderBottomColor: "grey",
     borderBottomWidth: 1
   },
 
