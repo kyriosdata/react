@@ -8,6 +8,8 @@ import {
   ActivityIndicator
 } from "react-native";
 
+import Cor from './constants/colors';
+
 function download(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
@@ -72,8 +74,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.entrada}>
-        <Button title="Limpa lista" onPress={limpaLista} />
-        <Button title="download cidades..." onPress={baixeArquivo} />
+        <View style={styles.button}><Button title="Limpar" onPress={limpaLista} color={Cor.limpar} /></View>
+        <View style={styles.button}><Button title="Download" onPress={baixeArquivo} color={Cor.download} /></View>
       </View>
       <View style={styles.saida}>{exibeCondicionalmente()}</View>
     </View>
@@ -81,6 +83,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    width: 110,
+  },
+
   container: {
     flex: 1,
     alignItems: "center",
