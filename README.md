@@ -9,3 +9,5 @@
 - [baixar](baixar) download (get) de arquivo no Github
 - [props](props) passando propriedades para componente
 - [keyboard](keyboard) abre e fecha soft keyboard
+- [alert](alert) abre caixa de alerta
+
