@@ -1,15 +1,17 @@
-import React, {useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Keyboard } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Button, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 export default function App() {
 
   return (
-    <View style={styles.container}>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.container}>
       <Text>Exiba ou oculte o keyboard</Text>
       <TextInput 
         autofocus={true} style={styles.entrada} placeholder='sua entrada aqui' keyboardType='number-pad' />
       <Button title='Feche' onPress={ () => Keyboard.dismiss()} />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
