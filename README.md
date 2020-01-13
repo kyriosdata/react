@@ -10,4 +10,5 @@
 - [props](props) passando propriedades para componente
 - [keyboard](keyboard) abre e fecha soft keyboard
 - [alert](alert) abre caixa de alerta
-
+- [botao](botao) botão com cantos arredondados
+ 
