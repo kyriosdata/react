@@ -12,4 +12,5 @@
 - [alert](alert) abre caixa de alerta
 - [botao](botao) botão com cantos arredondados
 - [botão com ícone](botaoicone) botão com ícone
+- [armazenamento](armazenamento) armazenamento local (AsyncStorage)
  
