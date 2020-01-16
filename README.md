@@ -14,4 +14,5 @@
 - [botão com ícone](botaoicone) botão com ícone
 - [armazenamento](armazenamento) armazenamento local (AsyncStorage)
 - [dimensions](dimensions) exibe dimensões da tela
- 
+- [imagemweb](imagemweb) altera sem deformar jpg obtido via web
+
