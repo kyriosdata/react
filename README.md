@@ -13,4 +13,5 @@
 - [botao](botao) botão com cantos arredondados
 - [botão com ícone](botaoicone) botão com ícone
 - [armazenamento](armazenamento) armazenamento local (AsyncStorage)
+- [dimensions](dimensions) exibe dimensões da tela
  
