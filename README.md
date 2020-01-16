@@ -15,4 +15,5 @@
 - [armazenamento](armazenamento) armazenamento local (AsyncStorage)
 - [dimensions](dimensions) exibe dimensões da tela
 - [imagemweb](imagemweb) altera sem deformar jpg obtido via web
+- [imgfail](imgfail) provoca falha de carregamento de imagem
 
