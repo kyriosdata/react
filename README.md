@@ -17,4 +17,5 @@
 - [imagemweb](imagemweb) altera sem deformar jpg obtido via web
 - [imgfail](imgfail) provoca falha de carregamento de imagem
 - [orientacao](orientacao) detecta e exibe orientação
+- [fontes](fontes) acréscimo de fontes
 
