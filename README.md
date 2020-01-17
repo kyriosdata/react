@@ -18,4 +18,5 @@
 - [imgfail](imgfail) provoca falha de carregamento de imagem
 - [orientacao](orientacao) detecta e exibe orientação
 - [fontes](fontes) acréscimo de fontes
+- [apploading](apploading) mantém splash enquanto inicia
 
