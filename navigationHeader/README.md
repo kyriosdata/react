@@ -10,4 +10,6 @@
 # Código
 
 - Crie o arquivo [HeaderButton.js](./screens/HeaderButton.js)
+- Exemplo de uso [TerceiraTela.js](./screens/TerceiraTela.js)
+
 
