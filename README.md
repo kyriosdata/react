@@ -20,4 +20,5 @@
 - [fontes](fontes) acréscimo de fontes
 - [apploading](apploading) mantém splash enquanto inicia
 - [navegacao](navegacao) navegação entre telas
+- [bandeiras](bandeiras) bandeiras dos estados brasileiros
 
