@@ -21,6 +21,6 @@
 - [apploading](apploading) mantém splash enquanto inicia
 - [navegacao](navegacao) navegação entre telas
 - [bandeiras](bandeiras) bandeiras dos estados brasileiros
-- [navigationHeader](navigationHeader) header configurado (ícone)
-- [navigationTab](navigationTab) tab com material button
+- [navigation header](navigation-header) header configurado (ícone)
+- [navigation tab](navigation-tab) tab com material button
 
