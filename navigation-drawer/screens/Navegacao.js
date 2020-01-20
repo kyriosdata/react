@@ -1,5 +1,5 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import NavigationStack from './NavegacaoStack';
+import NavegacaoStack from './NavegacaoStack';
 
-export default createAppContainer(NavigationStack);
+export default createAppContainer(NavegacaoStack);
