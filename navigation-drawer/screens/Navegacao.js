@@ -1,6 +1,5 @@
-import React from "react";
 import { createAppContainer } from "react-navigation";
 
-import NavegacaoBottomTab from "./NavegacaoBottomTab";
+import NavegacaoDrawer from "./NavegacaoDrawer";
 
-export default createAppContainer(NavegacaoBottomTab);
+export default createAppContainer(NavegacaoDrawer);

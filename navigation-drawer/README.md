@@ -17,12 +17,13 @@ nestes casos, nem todas estas dependências precisam ser instaladas.
 1. `expo install react-navigation-header-buttons`
 1. `expo install react-navigation-tabs`
 1. `expo install react-navigation-material-bottom-tabs`
+1. `expo install react-navigation-drawer`
 
 # Cenário de implementação
 
-- A Home (tela principal) contém _drawer_, _tabs_ (parte inferior) e oferece 
-navegação (via botão) para uma segunda tela na qual é possível ir a uma terceria. 
-Da terceira pode-se retornar para a segunda e da segunda para a primeira (stack). 
+- A Home (tela principal) contém _drawer_, _tabs_ (parte inferior) e oferece
+  navegação (via botão) para uma segunda tela na qual é possível ir a uma terceria.
+  Da terceira pode-se retornar para a segunda e da segunda para a primeira (stack).
 - Há 3 tabs: home (descrita acima), favoritos, notas.
 - Há as seguintes opções na _drawer_: Home, info, configuração, avaliação.
 
