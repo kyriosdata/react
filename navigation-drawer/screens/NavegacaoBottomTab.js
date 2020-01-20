@@ -11,7 +11,7 @@ const tabs = {
   Tab1: {
     screen: Favoritos,
     navigationOptions: {
-      tabBarLabel: "Principal",
+      tabBarLabel: "Google Play",
       tabBarIcon: info => {
         return <Entypo name="google-play" size={25} />;
       },
@@ -22,11 +22,11 @@ const tabs = {
   Tab2: {
     screen: Notas,
     navigationOptions: {
-      tabBarLabel: "Principal",
+      tabBarLabel: "Apple Store",
       tabBarIcon: info => {
         return <Entypo name="app-store" size={25} />;
       },
-      tabBarColor: "beige"
+      tabBarColor: "cyan"
     }
   }
 };
@@ -38,6 +38,6 @@ export default Platform.OS === "ios"
       }
     })
   : createMaterialBottomTabNavigator(tabs, {
-      activeTintCocor: "red",
+      activeColor: "red",
       shifting: true
     });
