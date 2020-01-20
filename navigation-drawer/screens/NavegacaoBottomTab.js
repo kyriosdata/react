@@ -5,13 +5,13 @@ import { createMaterialBottomTabNavigator } from "react-navigation-material-bott
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
-import Home from "./Home";
+import NavegacaoStack from "./NavegacaoStack";
 import Favoritos from "./Favoritos";
 import Notas from "./Notas";
 
 const tabs = {
   Tab0: {
-    screen: Home,
+    screen: NavegacaoStack,
     navigationOptions: {
       tabBarLabel: "Home",
       tabBarColor: "lightpink",
