@@ -8,7 +8,7 @@ export default SubHome = props => {
       <Button
         title="Ir para terceira"
         onPress={() => {
-          props.navigation.navigate({ routeName: "SubHome" });
+          props.navigation.navigate({ routeName: "SubSubHome" });
         }}
       />
     </View>

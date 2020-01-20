@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button } from "react-native";
 export default Home = props => {
   return (
     <View style={styles.tela}>
-      <Text style={styles.identificacao}>Tela Principal</Text>
+      <Text style={styles.identificacao}>Tela Principal (primeira)</Text>
       <Button
         title="Ir para secundária"
         onPress={() => {
