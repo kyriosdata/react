@@ -41,7 +41,10 @@ const drawer = {
         screen: AvaliacaoScreen,
         navigationOptions: menuBack("Avaliação")
       }
-    })
+    }),
+    navigationOptions: {
+      drawerLabel: "Avaliação"
+    }
   },
 
   Configuracao: {
@@ -50,7 +53,10 @@ const drawer = {
         screen: ConfiguracaoScreen,
         navigationOptions: menuBack("Configuração")
       }
-    })
+    }),
+    navigationOptions: {
+      drawerLabel: "Configuração"
+    }
   },
 
   Info: {
@@ -59,7 +65,10 @@ const drawer = {
         screen: InfoScreen,
         navigationOptions: menuBack("Informações")
       }
-    })
+    }),
+    navigationOptions: {
+      drawerLabel: "Informações"
+    }
   }
 };
 
