@@ -3,11 +3,24 @@ import { Platform } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
+import Home from "./Home";
 import Favoritos from "./Favoritos";
 import Notas from "./Notas";
 
 const tabs = {
+  Tab0: {
+    screen: Home,
+    navigationOptions: {
+      tabBarLabel: "Home",
+      tabBarColor: "lightpink",
+      tabBarIcon: info => {
+        return <FontAwesome name="home" size={25} color="green" />;
+      }
+    }
+  },
+
   Tab1: {
     screen: Favoritos,
     navigationOptions: {
