@@ -13,11 +13,12 @@ export default createStackNavigator({
     navigationOptions: navigationData => {
       return {
         headerTitle: "Principal",
-        headerLeft: (
+        headerLeft: () => (
           <HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item
               title="Menu"
               iconName="menu"
+              iconSize={25}
               onPress={() => {
                 navigationData.navigation.toggleDrawer();
               }}

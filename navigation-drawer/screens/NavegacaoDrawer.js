@@ -5,8 +5,10 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 
 import NavegacaoBottomTab from "./NavegacaoBottomTab";
 import AvaliacaoScreen from "./Avaliacao";
-import Configuracao from "./Configuracao";
-import Info from "./Info";
+import ConfiguracaoScreen from "./Configuracao";
+import InfoScreen from "./Info";
+
+import { createStackNavigator } from "react-navigation-stack";
 
 const drawer = {
   Home: {
@@ -14,15 +16,30 @@ const drawer = {
   },
 
   Avaliacao: {
-    screen: AvaliacaoScreen
+    screen: createStackNavigator({
+      Avaliacao: {
+        screen: AvaliacaoScreen,
+        navigationOptions: { headerTitle: "Avaliação" }
+      }
+    })
   },
 
   Configuracao: {
-    screen: Configuracao
+    screen: createStackNavigator({
+      Configuracao: {
+        screen: ConfiguracaoScreen,
+        navigationOptions: { headerTitle: "Configuração" }
+      }
+    })
   },
 
   Info: {
-    screen: Info
+    screen: createStackNavigator({
+      Info: {
+        screen: InfoScreen,
+        navigationOptions: { headerTitle: "Informações" }
+      }
+    })
   }
 };
 

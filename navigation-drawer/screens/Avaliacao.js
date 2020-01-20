@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default Avaliacao = props => {
   return (
     <View style={styles.tela}>
-      <Text style={styles.identificacao}>AVALIAÇÃO</Text>
+      <Text style={styles.identificacao}>AVALIAÇÃO (drawer)</Text>
     </View>
   );
 };
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "steelblue"
+    backgroundColor: "yellow"
   },
 
   identificacao: {

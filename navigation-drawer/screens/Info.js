@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default Info = props => {
   return (
     <View style={styles.tela}>
-      <Text style={styles.identificacao}>INFORMAÇÕES</Text>
+      <Text style={styles.identificacao}>INFORMAÇÕES (drawer)</Text>
     </View>
   );
 };
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "steelblue"
+    backgroundColor: "yellow"
   },
 
   identificacao: {
