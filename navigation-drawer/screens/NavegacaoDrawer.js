@@ -1,6 +1,4 @@
 import React from "react";
-import {} from "react-native";
-import {} from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "./HeaderButton";
@@ -12,6 +10,26 @@ import InfoScreen from "./Info";
 
 import { createStackNavigator } from "react-navigation-stack";
 
+function menuBack(headerTitle) {
+  return navigationData => {
+    return {
+      headerTitle: headerTitle,
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Menu"
+            iconName="arrow-back"
+            iconSize={25}
+            onPress={() => {
+              navigationData.navigation.navigate({ routeName: "Home" });
+            }}
+          />
+        </HeaderButtons>
+      )
+    };
+  };
+}
+
 const drawer = {
   Home: {
     screen: NavegacaoBottomTab
@@ -21,23 +39,7 @@ const drawer = {
     screen: createStackNavigator({
       Avaliacao: {
         screen: AvaliacaoScreen,
-        navigationOptions: navigationData => {
-          return {
-            headerTitle: "Avaliação",
-            headerLeft: () => (
-              <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                <Item
-                  title="Menu"
-                  iconName="arrow-back"
-                  iconSize={25}
-                  onPress={() => {
-                    navigationData.navigation.toggleDrawer();
-                  }}
-                />
-              </HeaderButtons>
-            )
-          };
-        }
+        navigationOptions: menuBack("Avaliação")
       }
     })
   },
@@ -46,7 +48,7 @@ const drawer = {
     screen: createStackNavigator({
       Configuracao: {
         screen: ConfiguracaoScreen,
-        navigationOptions: { headerTitle: "Configuração" }
+        navigationOptions: menuBack("Configuração")
       }
     })
   },
@@ -55,7 +57,7 @@ const drawer = {
     screen: createStackNavigator({
       Info: {
         screen: InfoScreen,
-        navigationOptions: { headerTitle: "Informações" }
+        navigationOptions: menuBack("Informações")
       }
     })
   }
