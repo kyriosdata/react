@@ -16,7 +16,7 @@ function counter(state = 0, action) {
 let store = createStore(counter);
 
 export default function App() {
-  console.log('rendering...');
+  console.log("rendering...");
   const [contador, setContador] = useState(store.getState());
 
   store.subscribe(() => setContador(store.getState()));
