@@ -3,6 +3,22 @@ const estadoInicial = {
     numero: 21
 };
 
-export default reducer = (state = estadoInicial, action) => {
+const COR = 'COR';
+const NUMERO = 'NUMERO';
+
+export const defineCorPreferida = (cor) => {
+    return {
+        type: COR,
+        preferida: cor,
+    };
+};
+
+export const reducer = (state = estadoInicial, action) => {
+    switch (action.type) {
+        case COR:
+            return { ...state, cor: action.preferida };
+        default:
+            return state;
+    }
     return state;
 };

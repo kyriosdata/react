@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
+import { useDispatch } from 'react-redux';
+import { defineCorPreferida } from '../reducer';
 
 export default TelaA = props => {
   const [cor, setCor] = useState('');
@@ -20,31 +22,36 @@ export default TelaA = props => {
     );
   }
 
-  const Entradas = (props) => {
-    return (
+  const dispatch = useDispatch();
+
+  const atualizaCorPreferida = () => {
+    dispatch(defineCorPreferida(cor));
+  }
+
+  const novaCor = texto => {
+    setCor(texto);
+    atualizaCorPreferida();
+  };
+
+  return (
+    <View style={styles.principal}>
       <View style={styles.entradas}>
         <View>
-          <Text>Minha cor preferida:</Text>
+          <Text>Cor preferida:</Text>
           <TextInput style={styles.entrada}
-            onChangeText={texto => setCor(texto)}
+            onChangeText={novaCor}
             value={cor}
           />
         </View>
 
         <View>
-          <Text>Meu número preferido:</Text>
+          <Text>Número preferido:</Text>
           <TextInput style={styles.entrada} keyboardType="numeric"
             onChangeText={valor => setNumero(valor)}
             value={numero}
           />
         </View>
       </View>
-    );
-  }
-
-  return (
-    <View style={styles.principal}>
-      <Entradas />
       <Botoes />
     </View>
   );
