@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 
 export default TelaA = props => {
   const [cor, setCor] = useState('');
+  const [numero, setNumero] = useState();
 
   function Botoes() {
     return (
@@ -13,7 +14,7 @@ export default TelaA = props => {
 
         <Button
           title="Vá para Número"
-          onPress={() => props.navigation.navigate({ routeName: "B" })}
+          onPress={() => props.navigation.navigate({ routeName: "C" })}
         />
       </View>
     );
@@ -22,17 +23,21 @@ export default TelaA = props => {
   const Entradas = (props) => {
     return (
       <View style={styles.entradas}>
-        <Text>Minha cor preferida:</Text>
-        <TextInput style={styles.entrada}
-          onChangeText={texto => setCor(texto)}
-          value={cor}
-        />
+        <View>
+          <Text>Minha cor preferida:</Text>
+          <TextInput style={styles.entrada}
+            onChangeText={texto => setCor(texto)}
+            value={cor}
+          />
+        </View>
 
-        <Text>Meu número preferido:</Text>
-        <TextInput style={styles.entrada}
-          onChangeText={texto => setCor(texto)}
-          value={cor}
-        />
+        <View>
+          <Text>Meu número preferido:</Text>
+          <TextInput style={styles.entrada} keyboardType="numeric"
+            onChangeText={valor => setNumero(valor)}
+            value={numero}
+          />
+        </View>
       </View>
     );
   }
