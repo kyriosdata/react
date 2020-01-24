@@ -22,7 +22,7 @@ export default TelaA = props => {
   const Entradas = (props) => {
     return (
       <View style={styles.entradas}>
-        <Text>Minha cor preferida é</Text>
+        <Text>Minha cor preferida:</Text>
         <TextInput style={styles.entrada}
           onChangeText={texto => setCor(texto)}
           value={cor}
