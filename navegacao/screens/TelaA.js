@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
 export default TelaA = props => {
-  console.log(props);
 
   return (
     <View style={styles.principal}>
