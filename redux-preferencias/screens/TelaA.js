@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useDispatch } from 'react-redux';
-import { defineCorPreferida } from '../reducer';
+import { actionDefineCorPreferida } from '../reducer';
 
 export default TelaA = props => {
   const [cor, setCor] = useState('');
@@ -24,13 +24,14 @@ export default TelaA = props => {
 
   const dispatch = useDispatch();
 
-  const atualizaCorPreferida = () => {
-    dispatch(defineCorPreferida(cor));
-  }
+  const corHandler = () => {
+    dispatch(actionDefineCorPreferida(cor));
+  };
 
   const novaCor = texto => {
+    console.log("Nova cor: " + texto);
     setCor(texto);
-    atualizaCorPreferida();
+    corHandler();
   };
 
   return (
