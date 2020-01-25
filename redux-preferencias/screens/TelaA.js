@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
-import { useDispatch } from 'react-redux';
-import { actionDefineCorPreferida } from '../reducer';
+import { useDispatch } from "react-redux";
+import {
+  actionDefineCorPreferida,
+  actionDefineNumeroPreferido
+} from "../reducer";
 
 export default TelaA = props => {
-  const [cor, setCor] = useState('');
+  const [cor, setCor] = useState("");
   const [numero, setNumero] = useState();
 
   function Botoes() {
     return (
       <View style={styles.botoes}>
-        <Button title="Vá para Cor"
+        <Button
+          title="Vá para Cor"
           onPress={() => props.navigation.navigate({ routeName: "B" })}
         />
 
@@ -24,14 +28,16 @@ export default TelaA = props => {
 
   const dispatch = useDispatch();
 
-  const corHandler = () => {
-    dispatch(actionDefineCorPreferida(cor));
-  };
-
   const novaCor = texto => {
     console.log("Nova cor: " + texto);
     setCor(texto);
-    corHandler();
+    dispatch(actionDefineCorPreferida(texto));
+  };
+
+  const novoNumero = valor => {
+    console.log("Novo número: " + valor);
+    setNumero(valor);
+    dispatch(actionDefineNumeroPreferido(valor));
   };
 
   return (
@@ -39,7 +45,8 @@ export default TelaA = props => {
       <View style={styles.entradas}>
         <View>
           <Text>Cor preferida:</Text>
-          <TextInput style={styles.entrada}
+          <TextInput
+            style={styles.entrada}
             onChangeText={novaCor}
             value={cor}
           />
@@ -47,8 +54,10 @@ export default TelaA = props => {
 
         <View>
           <Text>Número preferido:</Text>
-          <TextInput style={styles.entrada} keyboardType="numeric"
-            onChangeText={valor => setNumero(valor)}
+          <TextInput
+            style={styles.entrada}
+            keyboardType="numeric"
+            onChangeText={novoNumero}
             value={numero}
           />
         </View>
@@ -66,20 +75,20 @@ const styles = StyleSheet.create({
   },
 
   entradas: {
-    alignItems: 'center',
+    alignItems: "center"
   },
 
   entrada: {
     borderBottomWidth: 1,
-    borderBottomColor: 'black',
+    borderBottomColor: "black",
     marginVertical: 20,
-    width: 100,
+    width: 100
   },
 
   botoes: {
-    flexDirection: 'row',
-    width: '70%',
-    justifyContent: 'space-between',
-    marginTop: 20,
-  },
+    flexDirection: "row",
+    width: "70%",
+    justifyContent: "space-between",
+    marginTop: 20
+  }
 });
