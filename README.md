@@ -25,4 +25,6 @@
 - [navigation tab](navigation-tab) tab com material button
 - [navigation drawer](navigation-drawer) navegação com drawer
 - [redux](redux) gerenciamento de estado
+- [redux-preferencias](redux-preferencias) exemplo de uso de redux
+
 
