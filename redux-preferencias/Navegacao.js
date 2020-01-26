@@ -1,9 +1,9 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
-import TelaA from "./screens/TelaA";
-import TelaB from "./screens/TelaB";
-import TelaC from "./screens/TelaC";
+import TelaA from "./screens/HomeScreen";
+import TelaB from "./screens/CorScreen";
+import TelaC from "./screens/NumeroScreen";
 
 const Navegador = createStackNavigator({
   A: {
