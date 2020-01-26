@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useDispatch } from "react-redux";
 import { actionDefineCorPreferida } from "../state/actions/defineCor";
 import { actionDefineNumeroPreferido } from "../state/actions/defineNumero";
 
 export default TelaA = props => {
-  const [cor, setCor] = useState("");
-  const [numero, setNumero] = useState();
-
   function Botoes() {
     return (
       <View style={styles.botoes}>
@@ -27,14 +24,10 @@ export default TelaA = props => {
   const dispatch = useDispatch();
 
   const novaCor = texto => {
-    console.log("Nova cor: " + texto);
-    setCor(texto);
     dispatch(actionDefineCorPreferida(texto));
   };
 
   const novoNumero = valor => {
-    console.log("Novo número: " + valor);
-    setNumero(valor);
     dispatch(actionDefineNumeroPreferido(valor));
   };
 
@@ -43,11 +36,7 @@ export default TelaA = props => {
       <View style={styles.entradas}>
         <View>
           <Text>Cor preferida:</Text>
-          <TextInput
-            style={styles.entrada}
-            onChangeText={novaCor}
-            value={cor}
-          />
+          <TextInput style={styles.entrada} onChangeText={n => novaCor(n)} />
         </View>
 
         <View>
@@ -56,7 +45,6 @@ export default TelaA = props => {
             style={styles.entrada}
             keyboardType="numeric"
             onChangeText={novoNumero}
-            value={numero}
           />
         </View>
       </View>
