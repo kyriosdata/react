@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useDispatch } from "react-redux";
-import { actionDefineCorPreferida } from "../state/actions/DefineCor";
-import { actionDefineNumeroPreferido } from "../state/actions/DefineNumero";
+import { actionDefineCorPreferida } from "../state/actions/defineCor";
+import { actionDefineNumeroPreferido } from "../state/actions/defineNumero";
 
 export default TelaA = props => {
   const [cor, setCor] = useState("");
