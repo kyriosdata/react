@@ -1,11 +1,22 @@
+/**
+ * Valores iniciais para as preferências.
+ */
 const estadoInicial = {
   cor: "steelblue",
   numero: 21
 };
 
+/**
+ * Identifica tipos (type) das ações possíveis.
+ */
 const COR = "COR";
 const NUMERO = "NUMERO";
 
+/**
+ * Action que define nova cor.
+ *
+ * @param {string} cor Cora a ser definida como corrente.
+ */
 export const actionDefineCorPreferida = cor => {
   return {
     type: COR,
@@ -13,6 +24,11 @@ export const actionDefineCorPreferida = cor => {
   };
 };
 
+/**
+ * Action que define novo valor padrão (número armazenado como string).
+ *
+ * @param {string} numero
+ */
 export const actionDefineNumeroPreferido = numero => {
   return {
     type: NUMERO,
@@ -20,6 +36,15 @@ export const actionDefineNumeroPreferido = numero => {
   };
 };
 
+/**
+ * Reducer que executa a ação encaminhada (dispatch) sobre o
+ * estado. Observe que uma cópia do estado é realizada com a
+ * atualização desejada, ou seja, trata-se de uma função sem
+ * efeito colateral.
+ *
+ * @param {*} state O estado corrente.
+ * @param {*} action A ação a ser executada
+ */
 export const preferenciasReducer = (state = estadoInicial, action) => {
   switch (action.type) {
     case COR:
@@ -29,6 +54,4 @@ export const preferenciasReducer = (state = estadoInicial, action) => {
     default:
       return state;
   }
-
-  return state;
 };
