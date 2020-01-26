@@ -1,33 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useDispatch } from "react-redux";
 import { actionDefineCorPreferida } from "../state/actions/defineCor";
 import { actionDefineNumeroPreferido } from "../state/actions/defineNumero";
+import { useSelector } from "react-redux";
 
 export default TelaA = props => {
-  function Botoes() {
-    return (
-      <View style={styles.botoes}>
-        <Button
-          title="Vá para Cor"
-          onPress={() => props.navigation.navigate({ routeName: "B" })}
-        />
+  console.log("rerendering TelaA...");
+  const preferenciasCorrente = useSelector(state => state.preferencias);
+  const corSelecionada = preferenciasCorrente.preferida;
+  const numeroSelecionado = preferenciasCorrente.numero;
 
-        <Button
-          title="Vá para Número"
-          onPress={() => props.navigation.navigate({ routeName: "C" })}
-        />
-      </View>
-    );
-  }
+  const gotoCor = () => {
+    props.navigation.navigate({
+      routeName: "B",
+      params: {
+        corCorrente: corSelecionada
+      }
+    });
+  };
+
+  const gotoNumber = () => {
+    props.navigation.navigate({
+      routeName: "C",
+      params: { numeroCorrente: numeroSelecionado }
+    });
+  };
 
   const dispatch = useDispatch();
 
   const novaCor = texto => {
+    // setCor(texto);
     dispatch(actionDefineCorPreferida(texto));
   };
 
   const novoNumero = valor => {
+    // setNumero(valor);
     dispatch(actionDefineNumeroPreferido(valor));
   };
 
@@ -48,7 +56,10 @@ export default TelaA = props => {
           />
         </View>
       </View>
-      <Botoes />
+      <View style={styles.botoes}>
+        <Button title="Vá para Cor" onPress={gotoCor} />
+        <Button title="Vá para Número" onPress={gotoNumber} />
+      </View>
     </View>
   );
 };

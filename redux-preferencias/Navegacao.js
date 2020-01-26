@@ -7,12 +7,27 @@ import TelaC from "./screens/TelaC";
 
 const Navegador = createStackNavigator({
   A: {
-    screen: TelaA, navigationOptions: {
-      headerTitle: 'Preferências'
+    screen: TelaA,
+    navigationOptions: {
+      headerTitle: "Preferências"
     }
   },
-  B: { screen: TelaB, navigationOptions: { headerTitle: 'Cor preferida' } },
-  C: { screen: TelaC, navigationOptions: { headerTitle: 'Número preferido' } }
+  B: {
+    screen: TelaB,
+    navigationOptions: navigationData => {
+      const corCorrente = navigationData.navigation.getParam("corCorrente");
+      return { headerTitle: "Cor preferida: " + corCorrente };
+    }
+  },
+  C: {
+    screen: TelaC,
+    navigationOptions: navigationData => {
+      const numeroCorrente = navigationData.navigation.getParam(
+        "numeroCorrente"
+      );
+      return { headerTitle: "Número: " + numeroCorrente };
+    }
+  }
 });
 
 export default createAppContainer(Navegador);
