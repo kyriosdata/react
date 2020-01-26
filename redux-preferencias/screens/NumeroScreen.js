@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useSelector } from "react-redux";
 
-export default TelaC = props => {
+export default NumeroScreen = props => {
   const numero = useSelector(state => state.preferencias.numero);
-  console.log("Recuperado número: " + numero);
 
   return (
     <View style={styles.principal}>

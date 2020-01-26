@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionDefineCorPreferida } from "../state/actions/defineCor";
 import { actionDefineNumeroPreferido } from "../state/actions/defineNumero";
 
-export default TelaA = props => {
+export default HomeScreen = props => {
   const preferenciasCorrente = useSelector(state => state.preferencias);
   const corSelecionada = preferenciasCorrente.preferida;
   const numeroSelecionado = preferenciasCorrente.numero;
@@ -33,12 +33,10 @@ export default TelaA = props => {
   const dispatch = useDispatch();
 
   const novaCor = texto => {
-    // setCor(texto);
     dispatch(actionDefineCorPreferida(texto));
   };
 
   const novoNumero = valor => {
-    // setNumero(valor);
     dispatch(actionDefineNumeroPreferido(valor));
   };
 

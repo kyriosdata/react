@@ -1,9 +1,9 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
-import Principal from "./screens/HomeScreen";
-import Cor from "./screens/CorScreen";
-import Numero from "./screens/NumeroScreen";
+import HomeScreen from "./screens/HomeScreen";
+import CorScreen from "./screens/CorScreen";
+import NumeroScreen from "./screens/NumeroScreen";
 
 /**
  * corCorrente : parâmetro a ser fornecido para a tela Cor
@@ -12,20 +12,20 @@ import Numero from "./screens/NumeroScreen";
 
 const Navegador = createStackNavigator({
   Principal: {
-    screen: Principal,
+    screen: HomeScreen,
     navigationOptions: {
       headerTitle: "Preferências"
     }
   },
   Cor: {
-    screen: Cor,
+    screen: CorScreen,
     navigationOptions: navData => {
       const corrente = navData.navigation.getParam("corCorrente");
       return { headerTitle: "COR: " + corrente };
     }
   },
   Numero: {
-    screen: Numero,
+    screen: NumeroScreen,
     navigationOptions: navData => {
       const numero = navData.navigation.getParam("numeroCorrente");
       return { headerTitle: "Número: " + numero };

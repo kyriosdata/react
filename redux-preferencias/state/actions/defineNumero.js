@@ -9,7 +9,6 @@ export const NUMERO = "NUMERO";
  * @param {string} valor Valor a ser definido como preferido.
  */
 export const actionDefineNumeroPreferido = valor => {
-  console.log('actionDefineNumeroPreferido: ' + valor);
   return {
     type: NUMERO,
     numero: valor

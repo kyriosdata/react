@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useSelector } from "react-redux";
 
-export default TelaB = props => {
+export default CorScreen = props => {
   const preferenciasCorrente = useSelector(state => state.preferencias);
 
   return (

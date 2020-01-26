@@ -11,7 +11,6 @@ export const COR = "COR";
  * objeto a ser retornado.
  */
 export const actionDefineCorPreferida = cor => {
-  console.log("actionDefineCorPreferida: " + cor);
   return {
     type: COR,
     preferida: cor
