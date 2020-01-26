@@ -1,26 +1,26 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
-import TelaA from "./screens/HomeScreen";
-import TelaB from "./screens/CorScreen";
-import TelaC from "./screens/NumeroScreen";
+import Principal from "./screens/HomeScreen";
+import Cor from "./screens/CorScreen";
+import Numero from "./screens/NumeroScreen";
 
 const Navegador = createStackNavigator({
-  A: {
-    screen: TelaA,
+  Principal: {
+    screen: Principal,
     navigationOptions: {
       headerTitle: "Preferências"
     }
   },
-  B: {
-    screen: TelaB,
+  Cor: {
+    screen: Cor,
     navigationOptions: navigationData => {
       const corCorrente = navigationData.navigation.getParam("corCorrente");
       return { headerTitle: "COR: " + corCorrente };
     }
   },
-  C: {
-    screen: TelaC,
+  Numero: {
+    screen: Numero,
     navigationOptions: navigationData => {
       const numeroCorrente = navigationData.navigation.getParam(
         "numeroCorrente"

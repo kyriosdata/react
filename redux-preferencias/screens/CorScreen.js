@@ -13,7 +13,12 @@ export default TelaB = props => {
       <Text>A cor preferida chama-se {cor}</Text>
       <Button
         title="Vá para C"
-        onPress={() => props.navigation.navigate({ routeName: "C", params: { numeroCorrente: numero } })}
+        onPress={() =>
+          props.navigation.navigate({
+            routeName: "Numero",
+            params: { numeroCorrente: numero }
+          })
+        }
       />
     </View>
   );

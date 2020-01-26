@@ -11,7 +11,7 @@ export default TelaC = props => {
       <Text>Número com fontSize correspondente</Text>
       <Button
         title="Vá para A"
-        onPress={() => props.navigation.navigate({ routeName: "A" })}
+        onPress={() => props.navigation.navigate({ routeName: "Principal" })}
       />
       <Text style={{ ...styles.numero, fontSize: parseInt(numero) }}>
         {numero}

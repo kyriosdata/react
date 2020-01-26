@@ -16,7 +16,7 @@ export default TelaA = props => {
 
   const gotoCor = () => {
     props.navigation.navigate({
-      routeName: "B",
+      routeName: "Cor",
       params: {
         corCorrente: corSelecionada
       }
@@ -25,7 +25,7 @@ export default TelaA = props => {
 
   const gotoNumber = () => {
     props.navigation.navigate({
-      routeName: "C",
+      routeName: "Numero",
       params: { numeroCorrente: numeroSelecionado }
     });
   };
