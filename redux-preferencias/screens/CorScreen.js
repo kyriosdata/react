@@ -4,19 +4,16 @@ import { useSelector } from "react-redux";
 
 export default TelaB = props => {
   const preferenciasCorrente = useSelector(state => state.preferencias);
-  const cor = preferenciasCorrente.preferida;
-  const numero = preferenciasCorrente.numero;
 
-  console.log("useSelector cor recuperada: " + cor);
   return (
-    <View style={{ ...styles.principal, backgroundColor: cor }}>
-      <Text>A cor preferida chama-se {cor}</Text>
+    <View style={{ ...styles.principal, backgroundColor: preferenciasCorrente.preferida }}>
+      <Text>A cor preferida chama-se {preferenciasCorrente.preferida}</Text>
       <Button
-        title="Vá para C"
+        title="Número"
         onPress={() =>
           props.navigation.navigate({
             routeName: "Numero",
-            params: { numeroCorrente: numero }
+            params: { numeroCorrente: preferenciasCorrente.numero }
           })
         }
       />

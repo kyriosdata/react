@@ -5,6 +5,11 @@ import Principal from "./screens/HomeScreen";
 import Cor from "./screens/CorScreen";
 import Numero from "./screens/NumeroScreen";
 
+/**
+ * corCorrente : parâmetro a ser fornecido para a tela Cor
+ * numeroCorrente: parâmetro para a tela Numero
+ */
+
 const Navegador = createStackNavigator({
   Principal: {
     screen: Principal,
@@ -14,18 +19,16 @@ const Navegador = createStackNavigator({
   },
   Cor: {
     screen: Cor,
-    navigationOptions: navigationData => {
-      const corCorrente = navigationData.navigation.getParam("corCorrente");
-      return { headerTitle: "COR: " + corCorrente };
+    navigationOptions: navData => {
+      const corrente = navData.navigation.getParam("corCorrente");
+      return { headerTitle: "COR: " + corrente };
     }
   },
   Numero: {
     screen: Numero,
-    navigationOptions: navigationData => {
-      const numeroCorrente = navigationData.navigation.getParam(
-        "numeroCorrente"
-      );
-      return { headerTitle: "Número: " + numeroCorrente };
+    navigationOptions: navData => {
+      const numero = navData.navigation.getParam("numeroCorrente");
+      return { headerTitle: "Número: " + numero };
     }
   }
 });
