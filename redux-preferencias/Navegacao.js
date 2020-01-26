@@ -16,7 +16,7 @@ const Navegador = createStackNavigator({
     screen: TelaB,
     navigationOptions: navigationData => {
       const corCorrente = navigationData.navigation.getParam("corCorrente");
-      return { headerTitle: "Cor preferida: " + corCorrente };
+      return { headerTitle: "COR: " + corCorrente };
     }
   },
   C: {

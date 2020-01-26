@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
-import { useDispatch } from "react-redux";
+
+/**
+ * Imports para assegurar recursos que tanto recuperam quanto definem
+ * valores para o estado da aplicação.
+ */
+import { useDispatch, useSelector } from "react-redux";
 import { actionDefineCorPreferida } from "../state/actions/defineCor";
 import { actionDefineNumeroPreferido } from "../state/actions/defineNumero";
-import { useSelector } from "react-redux";
 
 export default TelaA = props => {
-  console.log("rerendering TelaA...");
   const preferenciasCorrente = useSelector(state => state.preferencias);
   const corSelecionada = preferenciasCorrente.preferida;
   const numeroSelecionado = preferenciasCorrente.numero;
