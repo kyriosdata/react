@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Opcoes from "./Opcoes";
 
-function funcaoA() {
-  console.log("A");
-}
-
-function funcaoB() {
-  console.log("B");
-}
-
 export default Selecao = props => {
+  const [cor, setCor] = useState("yellow");
+
+  function funcaoA() {
+    setCor("yellow");
+  }
+
+  function funcaoB() {
+    setCor("steelblue");
+  }
+
   return (
     <View style={styles.selecao}>
       <View style={styles.containerBotoes}>
-        <Opcoes onPressA={funcaoA} onPressB={funcaoB} />
+        <Opcoes
+          onPressA={funcaoA}
+          onPressB={funcaoB}
+          rotuloA="X"
+          rotuloB="Y"
+        />
       </View>
-      <View style={styles.working}></View>
+      <View style={{ ...styles.working, backgroundColor: cor }}></View>
     </View>
   );
 };
@@ -31,7 +38,6 @@ const styles = StyleSheet.create({
   },
 
   working: {
-    flex: 1,
-    backgroundColor: "yellow"
+    flex: 1
   }
 });

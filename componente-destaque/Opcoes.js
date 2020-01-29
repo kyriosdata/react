@@ -8,7 +8,7 @@ function cor(isSelected) {
 }
 
 export default Opcoes = props => {
-  const [isOpcaoASelecionada, setOpcaoASelecionada] = useState(false);
+  const [isOpcaoASelecionada, setOpcaoASelecionada] = useState(true);
 
   const corA = cor(isOpcaoASelecionada);
   const corB = cor(!isOpcaoASelecionada);
@@ -18,13 +18,18 @@ export default Opcoes = props => {
       <View style={styles.opcao}>
         <TouchableOpacity
           onPress={() => {
+            if (isOpcaoASelecionada) {
+              return;
+            }
             setOpcaoASelecionada(true);
             props.onPressA();
           }}
         >
           <View style={styles.botao}>
             <FontAwesome name="check" size={17} color={corA} />
-            <Text style={{ ...styles.rotulo, color: corA }}>A</Text>
+            <Text style={{ ...styles.rotulo, color: corA }}>
+              {props.rotuloA}
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -32,13 +37,18 @@ export default Opcoes = props => {
       <View style={styles.opcao}>
         <TouchableOpacity
           onPress={() => {
+            if (!isOpcaoASelecionada) {
+              return;
+            }
             setOpcaoASelecionada(false);
             props.onPressB();
           }}
         >
           <View style={styles.botao}>
             <FontAwesome name="exclamation" size={17} color={corB} />
-            <Text style={{ ...styles.rotulo, color: corB }}>B</Text>
+            <Text style={{ ...styles.rotulo, color: corB }}>
+              {props.rotuloB}
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
