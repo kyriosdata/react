@@ -1,25 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
 
+function cor(isSelected) {
+  return isSelected ? "black" : "grey";
+}
+
 export default Opcoes = props => {
+  const [isOpcaoASelecionada, setOpcaoASelecionada] = useState(false);
+
+  const corA = cor(isOpcaoASelecionada);
+  const corB = cor(!isOpcaoASelecionada);
+
   return (
     <View style={styles.conteiner}>
       <View style={styles.opcao}>
-        <TouchableOpacity onPress={props.onPressA}>
+        <TouchableOpacity
+          onPress={() => {
+            setOpcaoASelecionada(true);
+            props.onPressA();
+          }}
+        >
           <View style={styles.botao}>
-            <FontAwesome name="check" size={19} />
-            <Text style={styles.rotulo}>A</Text>
+            <FontAwesome name="check" size={17} color={corA} />
+            <Text style={{ ...styles.rotulo, color: corA }}>A</Text>
           </View>
         </TouchableOpacity>
       </View>
       <View style={styles.divisoria}></View>
       <View style={styles.opcao}>
-        <TouchableOpacity onPress={props.onPressB}>
+        <TouchableOpacity
+          onPress={() => {
+            setOpcaoASelecionada(false);
+            props.onPressB();
+          }}
+        >
           <View style={styles.botao}>
-            <FontAwesome name="exclamation" size={19} />
-            <Text style={styles.rotulo}>B</Text>
+            <FontAwesome name="exclamation" size={17} color={corB} />
+            <Text style={{ ...styles.rotulo, color: corB }}>B</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -44,7 +63,9 @@ const styles = StyleSheet.create({
   },
 
   rotulo: {
-    marginLeft: 20
+    marginLeft: 20,
+    color: "grey",
+    fontWeight: "bold"
   },
 
   opcao: {
