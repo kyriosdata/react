@@ -7,6 +7,12 @@ function cor(isSelected) {
   return isSelected ? "black" : "grey";
 }
 
+/**
+ * Exibe duas opções ('botões'), denominadas de A e B. 
+ * Os rótulos são fornecidos por 'rotuloA' e 'rotuloB', 
+ * enquanto 'onPressA' e 'onPressB' definem as funções
+ * executadas quando são pressionados. 
+ */
 export default Opcoes = props => {
   const [isOpcaoASelecionada, setOpcaoASelecionada] = useState(true);
 
