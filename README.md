@@ -26,5 +26,6 @@
 - [navigation drawer](navigation-drawer) navegação com drawer
 - [redux](redux) gerenciamento de estado
 - [redux-preferencias](redux-preferencias) exemplo de uso de redux
+- [componente-destaque](componente-destaque) duas opções
 
 
