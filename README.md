@@ -3,7 +3,7 @@
 - [elementar](elementar) primeira aplicação `expo init elementar` seguido de `expo start` coloca a aplicação disponível.
 - [segundo](segundo) alterando o estilo de texto.
 - [terceiro](terceiro) um componente embutido em uma função
-- [componentes](componentes) trabalhando com componentes básicos 
+- [componentes](componentes) trabalhando com componentes básicos
 - [flexbox](flexbox) posicionando componentes
 - [usestate](usestate) Uso correto de Hooks (React)
 - [baixar](baixar) download (get) de arquivo no Github
@@ -11,6 +11,7 @@
 - [keyboard](keyboard) abre e fecha soft keyboard
 - [alert](alert) abre caixa de alerta
 - [botao](botao) botão com cantos arredondados
+- [icone](icone) exibe ícone conforme a plataforma
 - [botão com ícone](botaoicone) botão com ícone
 - [armazenamento](armazenamento) armazenamento local (AsyncStorage)
 - [dimensions](dimensions) exibe dimensões da tela
@@ -27,5 +28,3 @@
 - [redux](redux) gerenciamento de estado
 - [redux-preferencias](redux-preferencias) exemplo de uso de redux
 - [componente-destaque](componente-destaque) duas opções
-
-
