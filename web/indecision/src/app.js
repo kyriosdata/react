@@ -40,17 +40,18 @@ const onMakeDecision = () => {
   const option = app.options[sorteado];
 };
 
-const setVisibility = (visibilidade) => {
+const setDivVisibility = (visibilidade) => {
   const elemento = document.getElementById("visibilidadeControlada");
   elemento.style.display = visibilidade ? "block" : "none";
 };
+
 const changeVisibility = () => {
   exibindo = !exibindo;
-  console.log(exibindo);
-  setVisibility(exibindo);
+  setDivVisibility(exibindo);
+  render();
 };
 
-let exibindo = false;
+let exibindo = true;
 
 const listaVazia = () => !app.options || app.options.length === 0;
 function render() {
