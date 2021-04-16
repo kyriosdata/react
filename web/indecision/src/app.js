@@ -1,81 +1,90 @@
-console.log("Indecision is up and running...");
+class IndecitionApp extends React.Component {
+  render() {
+    this.title = "Indecision";
+    this.subtitle = "Put your computer to work.";
+    this.options = ["um", "dois", "três"];
 
-// JSX - JavaScript XML
-const app = {
-  title: "Indecision",
-  subtitle: "Use a computer",
-  //options: [],
-};
-
-const appRoot = document.getElementById("app");
-
-const onFormSubmit = (e) => {
-  e.preventDefault();
-
-  const option = e.target.elements.option.value;
-  if (option) {
-    if (!app.options) {
-      app.options = [];
-    }
-
-    app.options.push(option);
-    console.log(app.options.length);
-    e.target.elements.option.value = "";
-    render();
+    return (
+      <div>
+        <Header title={this.title} subtitle={this.subtitle} />
+        <Action />
+        <Options options={this.options} />
+        <AddOption />
+      </div>
+    );
   }
-};
-
-const show = (option) => <li key={option.length}>{option}</li>;
-const formataOptions = () => app.options && app.options.map(show);
-const showItens = () => <ol>{formataOptions()}</ol>;
-
-function removeAll() {
-  app.options = [];
-  render();
+}
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.subtitle}</h2>
+      </div>
+    );
+  }
 }
 
-const onMakeDecision = () => {
-  const random = Math.random() * app.options.length;
-  const sorteado = Math.floor(random);
-  const option = app.options[sorteado];
-};
+class Action extends React.Component {
+  handlePick() {
+    alert("clicked");
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handlePick}>What should I do?</button>
+      </div>
+    );
+  }
+}
 
-const setDivVisibility = (visibilidade) => {
-  const elemento = document.getElementById("visibilidadeControlada");
-  elemento.style.display = visibilidade ? "block" : "none";
-};
+class Options extends React.Component {
+  removeAll() {
+    this.props.options = [];
+  }
+  render() {
+    const show = this.props.options.map((o) => <Option key={o} option={o} />);
+    return (
+      <div>
+        <h3>Options:</h3>
+        <button onClick={this.removeAll}>Remove all</button>
+        {show}
+      </div>
+    );
+  }
+}
 
-const changeVisibility = () => {
-  exibindo = !exibindo;
-  setDivVisibility(exibindo);
-  render();
-};
+class Option extends React.Component {
+  render() {
+    return <div>{this.props.option}</div>;
+  }
+}
 
-let exibindo = true;
+class AddOption extends React.Component {
+  add(e) {
+    // Evita reenvio do formulário (tela redesenhada)
+    e.preventDefault();
 
-const listaVazia = () => !app.options || app.options.length === 0;
-function render() {
-  const template = (
-    <div>
-      <h1>{app.title}</h1>
-      <h3>{app.subtitle}</h3>
-      <button onClick={changeVisibility}>{exibindo ? "Hide" : "Show"}</button>
-      <div id="visibilidadeControlada">
-        <p>{app.options && app.options.length}</p>
-        <button disabled={listaVazia()} onClick={onMakeDecision}>
-          What should I do?
-        </button>
-        <button onClick={removeAll}>Remove all elements</button>
-        {showItens()}
-        <form onSubmit={onFormSubmit}>
-          <input type="text" name="option" />
+    // e.target.elements todos os elementos do form
+    // via nome (propriedade 'name') recupera-se o elemento
+    const elemento = e.target.elements.opcao;
+    if (elemento.value) {
+      alert("adiciona " + elemento.value);
+      elemento.value = "";
+    }
+  }
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.add}>
+          <input name="opcao" type="text" />
           <button>Add option</button>
         </form>
       </div>
-    </div>
-  );
-
-  ReactDOM.render(template, appRoot);
+    );
+  }
 }
 
-render();
+const appRoot = document.getElementById("app");
+
+ReactDOM.render(<IndecitionApp />, appRoot);

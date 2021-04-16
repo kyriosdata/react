@@ -10,3 +10,8 @@
 - `npm install --save-dev @babel/core`
 - `npm install --save-dev @babel/preset-env`
 - `npm install --save-dev @babel/preset-react`
+
+## Desenvolvimento (dinâmica)
+
+- Colocar Babel monitorando diretório e realizando conversão sempre que houver mudança.
+- Colocar live-server em funcionamento para monitorar diretório atualizado pelo Babel e atualizar browser a cada mudança.
