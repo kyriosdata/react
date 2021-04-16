@@ -1,15 +1,50 @@
 class IndecitionApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.removeAll = this.removeAll.bind(this);
+    this.adiciona = this.adiciona.bind(this);
+    this.pickOne = this.pickOne.bind(this);
+
+    this.state = {
+      options: ["um", "dois", "três", "quatro"],
+    };
+  }
+
+  adiciona(opcao) {
+    this.setState((previous) => {
+      return {
+        options: previous.options.concat([opcao]),
+      };
+    });
+  }
+
+  removeAll() {
+    this.setState(() => {
+      return {
+        options: [],
+      };
+    });
+  }
+
+  pickOne() {
+    const random = Math.random() * this.state.options.length;
+    const index = Math.floor(random);
+    alert(this.state.options[index]);
+  }
+
   render() {
     this.title = "Indecision";
     this.subtitle = "Put your computer to work.";
-    this.options = ["um", "dois", "três"];
 
     return (
       <div>
         <Header title={this.title} subtitle={this.subtitle} />
-        <Action />
-        <Options options={this.options} />
-        <AddOption />
+        <Action
+          pickOne={this.pickOne}
+          hasOptions={this.state.options.length > 0}
+        />
+        <Options options={this.state.options} removeTudo={this.removeAll} />
+        <AddOption adiciona={this.adiciona} />
       </div>
     );
   }
@@ -26,28 +61,28 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
-  handlePick() {
-    alert("clicked");
-  }
   render() {
     return (
       <div>
-        <button onClick={this.handlePick}>What should I do?</button>
+        <button disabled={!this.props.hasOptions} onClick={this.props.pickOne}>
+          What should I do?
+        </button>
       </div>
     );
   }
 }
 
 class Options extends React.Component {
-  removeAll() {
-    this.props.options = [];
+  constructor(props) {
+    super(props);
   }
+
   render() {
     const show = this.props.options.map((o) => <Option key={o} option={o} />);
     return (
       <div>
         <h3>Options:</h3>
-        <button onClick={this.removeAll}>Remove all</button>
+        <button onClick={this.props.removeTudo}>Remove all</button>
         {show}
       </div>
     );
@@ -61,6 +96,11 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  constructor(props) {
+    super(props);
+    this.add = this.add.bind(this);
+  }
+
   add(e) {
     // Evita reenvio do formulário (tela redesenhada)
     e.preventDefault();
@@ -69,7 +109,7 @@ class AddOption extends React.Component {
     // via nome (propriedade 'name') recupera-se o elemento
     const elemento = e.target.elements.opcao;
     if (elemento.value) {
-      alert("adiciona " + elemento.value);
+      this.props.adiciona(elemento.value);
       elemento.value = "";
     }
   }
