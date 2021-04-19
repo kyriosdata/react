@@ -1,6 +1,6 @@
 ### live-server para visualizar o que está em public
 
-- `npm install -g live-server`
+- `npm install --save-dev live-server`
 - `live-server public` (disponibiliza public via web com "live reload")
 
 ### Babel para converter JSX para js convencional
