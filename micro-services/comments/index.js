@@ -1,9 +1,11 @@
 const express = require("express");
 const { randomBytes } = require("crypto");
 const { v4: uuidv4 } = require("uuid");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const commentsByPostId = {};
 

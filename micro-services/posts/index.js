@@ -1,11 +1,12 @@
 const express = require("express");
-const { randomBytes } = require("crypto");
 const { v4: uuidv4 } = require("uuid");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
-const posts = [];
+const posts = {};
 
 app.get("/posts", (req, res) => {
   res.send(posts);
@@ -13,10 +14,10 @@ app.get("/posts", (req, res) => {
 
 app.post("/posts", (req, res) => {
   const id = uuidv4();
-  posts.push({
+  posts[id] = {
     id,
     ...req.body,
-  });
+  };
 
   res.status(201).send(posts);
 });
