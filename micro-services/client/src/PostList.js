@@ -13,9 +13,17 @@ const PostList = () => {
     fetchPosts();
   }, []);
 
-  console.log(posts);
+  const toShow = Object.values(posts).map((p) => p.title);
 
-  return <div className="container"></div>;
+  return (
+    <div className="container">
+      <ol>
+        {toShow.map((t) => (
+          <li>{t}</li>
+        ))}
+      </ol>
+    </div>
+  );
 };
 
 export default PostList;
