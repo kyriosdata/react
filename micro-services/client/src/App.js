@@ -4,7 +4,7 @@ import PostList from "./PostList";
 
 const App = () => {
   return (
-    <div>
+    <div className="container is-fluid mt-3">
       <h1 className="title">Create Post</h1>
       <PostCreate />
       <hr />

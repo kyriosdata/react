@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Simula SGBD em RAM
+// Para cada post (propriedade) segue um vetor de comentários
 const commentsByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
@@ -28,5 +30,5 @@ app.post("/posts/:id/comments", (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Listening on port 4001...");
+  console.log("Comments service listening on port 4001...");
 });

@@ -6,6 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Simula SGBD em RAM
 const posts = {};
 
 app.get("/posts", (req, res) => {
@@ -23,5 +24,5 @@ app.post("/posts", (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("Listening on port 4000...");
+  console.log("Posts service listening on port 4000...");
 });
