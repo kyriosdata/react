@@ -14,13 +14,14 @@ app.get("/posts", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
+  console.log(req.body);
   const id = uuidv4();
   posts[id] = {
     id,
     ...req.body,
   };
 
-  res.status(201).send(posts);
+  res.status(201).send(posts[id]);
 });
 
 app.listen(4000, () => {
