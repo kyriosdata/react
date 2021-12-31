@@ -13,17 +13,26 @@ const PostList = () => {
     fetchPosts();
   }, []);
 
-  const toShow = Object.values(posts).map((p) => p.title);
+  const toShow = (objeto) => Object.values(objeto).map((p) => p.title);
 
-  return (
-    <div className="container">
-      <ol>
-        {toShow.map((t) => (
-          <li>{t}</li>
-        ))}
-      </ol>
-    </div>
-  );
+  const render = (titulo) => {
+    return (
+      <div className="level-left">
+        <div className="leve-item">
+          <div className="card">
+            <div className="card-content">
+              <div className="media-content">
+                <p className="title is-4">{titulo}</p>
+              </div>
+              <div className="content">{titulo}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return <div className="level">{toShow(posts).map((t) => render(t))}</div>;
 };
 
 export default PostList;

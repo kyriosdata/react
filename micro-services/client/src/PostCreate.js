@@ -7,6 +7,10 @@ const Create = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    if (!title || title === "") {
+      return;
+    }
+
     await axios.post("http://localhost:4000/posts", { title });
 
     setTitle("");

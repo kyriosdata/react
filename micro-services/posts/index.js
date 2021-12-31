@@ -14,8 +14,14 @@ app.get("/posts", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-  console.log(req.body);
   const id = uuidv4();
+
+  // Ignore post cujo título já existe
+  if (Object.keys(posts).find((k) => posts[k].title === req.body.title)) {
+    res.status(200).send(posts[id]);
+    return;
+  }
+
   posts[id] = {
     id,
     ...req.body,
